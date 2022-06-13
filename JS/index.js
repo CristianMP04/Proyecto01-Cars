@@ -9,35 +9,38 @@ vehiculoImg.src = "./../img/car_01.png";
 
 const vehiculos = [];
 
-const play = () => {
-  for (let coches of vehiculos) {
-    coches.borrar();
-    coches.y -= 5;
-    coches.dibujar();  
-  }
-};
+let ciclista = new Ciclista( 310, 600, 70 ,100, riderImg)
 
 
-const aparicionVehiculos = () => {
-    const randomPositionX = Math.floor(Math.random() * 500);
-    const coche = new Objeto(
-      randomPositionX,
-      570,
-      120,
-      60,
-      vehiculoImg,
-      ctx
-    );
-    vehiculos.push(coche);
-  };
+
+
 
 
   // Carga Inicial Me Imprime el ciclista y vehiculo
 const cargaInicial = () => {
-  ctx.drawImage(riderImg, 310, 600, 70 ,100);
-  ctx.drawImage(vehiculoImg, 310, 0, 70 ,155);
-  setInterval(aparicionVehiculos, 200);
-  setInterval(play, 200);
+  
+  ctx.drawImage(vehiculoImg, 310, 0, 60 ,145);
+  //setInterval(aparicionVehiculos, 200);
+};
+
+
+// movimiento + limite 
+const moveRider = (e) => {
+  ciclista.borrar()
+  if (e.key === "ArrowLeft" && ciclista.x > 100) {
+    ciclista.x -= 20;
+  }
+  if (e.key === "ArrowRight" && ciclista.x < 530) {
+    ciclista.x += 20;
+  }
+  if (e.key === "ArrowUp" && ciclista.y > 0) {
+    ciclista.y -= 20;
+  }
+  if (e.key === "ArrowDown" && ciclista.y < 600) {
+    ciclista.y += 20;
+  }
+  ciclista.dibujar();
+
 };
 
   
