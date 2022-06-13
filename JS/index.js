@@ -7,22 +7,38 @@ riderImg.src = "./../img/rider.png";
 let vehiculoImg = new Image();
 vehiculoImg.src = "./../img/car_01.png";
 
+const vehiculos = [];
+
+const play = () => {
+  for (let coches of vehiculos) {
+    coches.borrar();
+    coches.y -= 5;
+    coches.dibujar();  
+  }
+};
 
 
+const aparicionVehiculos = () => {
+    const randomPositionX = Math.floor(Math.random() * 500);
+    const coche = new Objeto(
+      randomPositionX,
+      570,
+      120,
+      60,
+      vehiculoImg,
+      ctx
+    );
+    vehiculos.push(coche);
+  };
 
-// Carga Inicial Me Imprime el ciclista
+
+  // Carga Inicial Me Imprime el ciclista y vehiculo
 const cargaInicial = () => {
-    ctx.drawImage(riderImg, 310, 600, 70 ,100);
-    ctx.drawImage(vehiculoImg, 310, 0, 70 ,100);
-  };
-
-
-  const logKey = (e) => {
-    e.preventDefault();
-    ciclista.borrar();
-    ciclista.moverCiclista(e.key);
-    ciclista.dibujar();
-  };
+  ctx.drawImage(riderImg, 310, 600, 70 ,100);
+  ctx.drawImage(vehiculoImg, 310, 0, 70 ,155);
+  setInterval(aparicionVehiculos, 200);
+  setInterval(play, 200);
+};
 
   
  
