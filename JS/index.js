@@ -7,20 +7,42 @@ riderImg.src = "./../img/rider.png";
 let vehiculoImg = new Image();
 vehiculoImg.src = "./../img/car_01.png";
 
-const vehiculos = [];
+let vehiculos = [];
 
-let ciclista = new Ciclista( 310, 600, 70 ,100, riderImg)
+let ciclista = new Ciclista( 310, 600, 70 ,100, riderImg);
+
+const jugar = () => {
+  for (let vehiculo of vehiculos) {
+    vehiculo.borrar();
+    vehiculo.y += 5;
+    vehiculo.dibujar();
+   
+  }
+};
+
+const aparicionVehiculos = () => {
+  const randomPositionX = Math.floor(Math.random() * 600);
+  const vehiculo = new Vehiculo(
+    randomPositionX,
+    0,
+    60,
+    140,
+    vehiculoImg,
+    ctx
+  );
+  vehiculos.push(vehiculo);
+};
 
 
 
 
 
 
-  // Carga Inicial Me Imprime el ciclista y vehiculo
-const cargaInicial = () => {
   
-  ctx.drawImage(vehiculoImg, 310, 0, 60 ,145);
-  //setInterval(aparicionVehiculos, 200);
+const cargaInicial = () => {
+  ciclista.dibujar();
+  setInterval(jugar, 200);
+  setInterval(aparicionVehiculos, 2500);
 };
 
 
@@ -52,6 +74,6 @@ const moveRider = (e) => {
 
 
 
-window.addEventListener("load", cargaInicial); // llama a la función cargaInicial (carga ciclista)
+window.addEventListener("load", cargaInicial); // llama a la función carga Inicial (carga ciclista)
 
 window.addEventListener("keydown", moveRider);
