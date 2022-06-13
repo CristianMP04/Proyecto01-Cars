@@ -11,20 +11,26 @@ let vehiculos = [];
 
 let ciclista = new Ciclista( 310, 600, 70 ,100, riderImg);
 
+let frames = 0;
+
 const jugar = () => {
   for (let vehiculo of vehiculos) {
     vehiculo.borrar();
-    vehiculo.y += 5;
+    vehiculo.y += 10;
     vehiculo.dibujar();
    
   }
+  frames++;
+  if ( frames % 20 ===0) {
+    aparicionVehiculos();
+  } 
 };
 
 const aparicionVehiculos = () => {
-  const randomPositionX = Math.floor(Math.random() * 600);
+  const randomPositionX = Math.trunc(Math.random() * (580 - 110 ) + 110);
   const vehiculo = new Vehiculo(
     randomPositionX,
-    0,
+    -140,
     60,
     140,
     vehiculoImg,
@@ -37,12 +43,11 @@ const aparicionVehiculos = () => {
 
 
 
-
-  
 const cargaInicial = () => {
   ciclista.dibujar();
   setInterval(jugar, 200);
-  setInterval(aparicionVehiculos, 2500);
+  
+  // setInterval(aparicionVehiculos, 1000);
 };
 
 
@@ -68,12 +73,21 @@ const moveRider = (e) => {
   
  
 
+window.onload = () => {
+  const startButton = document.getElementById("empezar");
+  const divCanvas = document.getElementById("divCanvas");
+  startButton.addEventListener("click", function() {
+    divCanvas.classList.remove("hidden");
+    startButton.classList.add("hidden");
+    cargaInicial();
+  });
+
+}
 
 
 
 
 
-
-window.addEventListener("load", cargaInicial); // llama a la función carga Inicial (carga ciclista)
+// window.addEventListener("load", cargaInicial); // llama a la función carga Inicial (carga ciclista)
 
 window.addEventListener("keydown", moveRider);
