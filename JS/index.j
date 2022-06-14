@@ -1,6 +1,8 @@
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
+let isGameOn = true;
+
 let riderImg = new Image();
 riderImg.src = "./../img/rider.png";
 
@@ -12,6 +14,7 @@ let vehiculos = [];
 let ciclista = new Ciclista( 310, 600, 70 ,100, riderImg);
 
 let frames = 0;
+
 
 const jugar = () => {
   for (let vehiculo of vehiculos) {
@@ -40,12 +43,21 @@ const aparicionVehiculos = () => {
 };
 
 // colision
+checkShipAstCollision = (vehiculo) => {
+  if (
+    this.ciclista.x < vehiculo.x + vehiculo.width &&
+    this.ciclista.x + this.ciclista.width > vehiculo.x &&
+    this.ciclista.y < vehiculo.y + vehiculo.height &&
+    this.ciclista.height + this.ciclista.y > vehiculo.y
+  ) {
+    isGameOn = false;
 
-function checkColision(ciclista, vehiculo){ 
-  return ((ciclista.pos.x+ciclista.width >= vehiculo.pos.x)  &&  (vehiculo.pos.x+vehiculo.width >= ciclista.pos.x) && (ciclista.pos.y+ciclista.height >= vehiculo.pos.y) && (vehiculo.pos.y+vehiculo.height >= ciclista.pos.y));
+    canvas.style.display = "none";
+    gameOverScreen.style.display = "flex";
+  }
+};
 
-}
-console.log("colision");
+
 // final colision
 
 

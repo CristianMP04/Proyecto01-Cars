@@ -8,18 +8,48 @@
     <title>Rider</title>
 </head>
 <body>  
-    <div class="container">
-        <div class="menu">
-            <button id="empezar">Start</button>
-        </div>
+    <!-- <div class="container">
+        <div id="game-intro">
+            <img src="./img/road_02.jpg" width="600" alt="logo" />
+            <br />
+            <button id="start-btn">Start</button>
+            <p id="instructions">Movement:Use the arrows ◀︎ / ▶︎ and the SPACE BAR to punch!</p>
+          </div>
+        
         <div class="canvas hidden" id="divCanvas" style="margin: 0 auto;">
             <canvas id="canvas" width="700" height="700" style="background-image: url(img/road_02.jpg);"></canvas>
         </div>
-    </div>
-       
+    </div> -->
+
+    <div class="container">
+        <!-- INTRO -->
+        <!-- <audio id="songs" src="./sound/round.mp3" type="audio/mpeg"></audio> -->
+        <div id="game-intro">
+          <img src="./img/playa.webp" width="600" alt="logo" />
+          <br />
+          <button id="start-btn">Start!</button>
+          <p id="instructions">Movement:Use the arrows ◀︎ / ▶︎ and the SPACE BAR to punch!</p>
+        </div>
+        <!-- GAME SCREEN -->
+        <canvas id="my-canvas" width="800px" height="700px" class="hidden"></canvas>
+        <!-- GAME OVER SCREEN -->
+        <div id="gameover-screen" class="hidden">
+          <img src="./img/montañas-cerca-de-Barcelona.jpg" width="500" alt="logo" />
+          <!-- <button id="restart-btn">Play Again!</button> -->
+          <!-- <p id="finalScore" class="finalScore"></p> -->
+        </div>
+      </div>
+
+    
+    <script type="text/javascript" src="JS/inicio.js"></script>
+    <script type="text/javascript" src="JS/game.js"></script>
     <script type="text/javascript" src="JS/ciclista.js"></script>
     <script type="text/javascript" src="JS/vehiculo.js"></script>
-    <script type="text/javascript" src="JS/index.js"></script>
+   
+   
+
+    <!-- <script type="text/javascript" src="JS/index.js"></script> -->
+    
     
 </body>
 </html>

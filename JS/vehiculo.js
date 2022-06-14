@@ -1,19 +1,23 @@
+
 class Vehiculo {
-    constructor(x, y, ancho, alto, imagen) {
-        this.x =x;
-        this.y= y;
-        this.ancho = ancho;
-        this.alto = alto;
-        this.imagen =imagen;
+   
+    constructor(posXParam) {
+        this.x = posXParam;
+        this.y= 0;
+        this.width = 100;
+        this.height = 122;
+        this.img = new Image();
+        this.img.src = "../img/goat.png";
+        this.vehiculoSpeed = 2;
     }
 
-    dibujar() {
-        ctx.drawImage(this.imagen, this.x, this.y, this.ancho, this.alto);
+    drawVehiculo () {
+       ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
-    borrar() {
-        ctx.clearRect(this.x, this.y, this.ancho, this.alto);
-      }
-
-    }
+  
+    cowMove () {
+          this.y = this.y + this.vehiculoSpeed
+    };
+ }
 
