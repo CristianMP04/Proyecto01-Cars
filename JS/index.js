@@ -5,7 +5,7 @@ let riderImg = new Image();
 riderImg.src = "./../img/rider.png";
 
 let vehiculoImg = new Image();
-vehiculoImg.src = "./../img/car_01.png";
+vehiculoImg.src = "./../img/goat.png";
 
 let vehiculos = [];
 
@@ -21,7 +21,7 @@ const jugar = () => {
    
   }
   frames++;
-  if ( frames % 20 ===0) {
+  if ( frames % 10 ===0) {
     aparicionVehiculos();
   } 
 };
@@ -31,13 +31,22 @@ const aparicionVehiculos = () => {
   const vehiculo = new Vehiculo(
     randomPositionX,
     -140,
-    60,
-    140,
+    100,
+    122,
     vehiculoImg,
     ctx
   );
   vehiculos.push(vehiculo);
 };
+
+// colision
+
+function checkColision(ciclista, vehiculo){ 
+  return ((ciclista.pos.x+ciclista.width >= vehiculo.pos.x)  &&  (vehiculo.pos.x+vehiculo.width >= ciclista.pos.x) && (ciclista.pos.y+ciclista.height >= vehiculo.pos.y) && (vehiculo.pos.y+vehiculo.height >= ciclista.pos.y));
+
+}
+console.log("colision");
+// final colision
 
 
 
