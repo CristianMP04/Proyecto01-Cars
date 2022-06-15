@@ -7,7 +7,7 @@ class Ciclista {
     this.width = 70;
     this.height = 100;
     this.img = new Image();
-    this.img.src = "../img/rider.png";
+    this.img.src = "./img/rider.png";
   }
 
   drawCiclista() {
