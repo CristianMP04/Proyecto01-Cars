@@ -4,11 +4,11 @@ class Vehiculo {
     constructor(posXParam) {
         this.x = posXParam;
         this.y= 0;
-        this.width = 100;
-        this.height = 122;
+        this.width = 90;
+        this.height = 112;
         this.img = new Image();
-        this.img.src = "../img/goat.png";
-        this.vehiculoSpeed = 2;
+        this.img.src = "./img/goat.png";
+        this.vehiculoSpeed = 4;
     }
 
     drawVehiculo () {

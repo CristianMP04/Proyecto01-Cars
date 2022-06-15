@@ -9,10 +9,12 @@ class Game {
     //this.vehiculoSeparation = 100;
     //this.shot = undefined;
     this.isGameOn = true;
-
     this.frame = 0;
   }
 
+  
+
+ 
   // drawBackground = () => {
   //     ctx.drawImage(this.background,0,0, canvas.width, canvas.height)
   //  }
@@ -154,7 +156,7 @@ class Game {
       requestAnimationFrame(this.gameLoop);
     }
 
-    if (this.frame % 100 === 0) {
+    if (this.frame % 50 === 0) {
         this.spawningVehiculo();
     }
 
