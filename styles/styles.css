@@ -62,7 +62,7 @@ body {
   background-color: #222;
   padding: 17px 60px;
   margin: 0 auto;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.5);
 }
 
 #game-intro > button span {
@@ -87,4 +87,12 @@ body {
   #game-intro > button:hover:after {
     -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
     transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  }
+
+  #gameover-screen > button {
+    position: absolute;
+    top: 550px;
+    left: 800px;
+    width: 100px;
+    height: 70px;
   }

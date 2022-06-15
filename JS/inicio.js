@@ -30,5 +30,7 @@ document.addEventListener("keydown", (event) => {
     newGame.ciclista.riderMovement(event);
   
 });
-// let playAgainButton = document.querySelector("#restart-btn");
-// playAgainButton.addEventListener("click", startGame);
+
+
+let playAgainButton = document.querySelector("#restart-btn");
+ playAgainButton.addEventListener("click", startGame);

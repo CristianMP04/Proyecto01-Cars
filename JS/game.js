@@ -38,6 +38,7 @@ class Game {
     canvas.style.display = "none";
     gameOverScreen.style.display = "flex";
    }
+   
   };
 
   drawBackground = () => {

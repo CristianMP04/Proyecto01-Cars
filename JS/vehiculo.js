@@ -8,7 +8,7 @@ class Vehiculo {
         this.height = 112;
         this.img = new Image();
         this.img.src = "./img/goat.png";
-        this.vehiculoSpeed = 6;
+        this.vehiculoSpeed = 5;
     }
 
     drawVehiculo () {
