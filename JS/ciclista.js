@@ -3,9 +3,9 @@ class Ciclista {
     this.x = canvas.width / 3;
     this.y = canvas.height - 100;
     this.speedX = 0;
-    this.speedY = 0;
-    this.width = 70;
-    this.height = 100;
+    this.speedY = 10;
+    this.width = 60;
+    this.height = 90;
     this.img = new Image();
     this.img.src = "./img/rider.png";
   }
@@ -37,5 +37,8 @@ class Ciclista {
       if (e.key === "ArrowDown" && this.y < 600) {
         this.y += 20;
       }
+
+      //console.log(player.score++);
+      
   };
 }

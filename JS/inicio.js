@@ -4,11 +4,15 @@ let gameOverScreen = document.querySelector("#gameover-screen");
 let canvas = document.querySelector("#my-canvas");
 let ctx = canvas.getContext("2d");
 let newGame;
+const score = document.querySelector("#score"); // intento score
+
+let player ={score:0};
+
 
 const startGame = () => {
     
    
-    
+    player.score = 0;
 
   gameIntro.style.display = "none"
   gameOverScreen.style.display = "none";
