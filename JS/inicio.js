@@ -5,13 +5,14 @@ let canvas = document.querySelector("#my-canvas");
 let ctx = canvas.getContext("2d");
 let newGame;
 const score = document.querySelector("#score"); // intento score
+score.setAttribute("class", "hidden");
 
 let player ={score:0};
 
 
 const startGame = () => {
     
-   
+score.classList.remove("hidden");
 player.score = 0;
 
   gameIntro.style.display = "none"
