@@ -12,7 +12,7 @@ let player ={score:0};
 const startGame = () => {
     
    
-    player.score = 0;
+player.score = 0;
 
   gameIntro.style.display = "none"
   gameOverScreen.style.display = "none";

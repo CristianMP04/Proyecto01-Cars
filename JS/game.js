@@ -33,8 +33,6 @@ class Game {
     this.ciclista.height + this.ciclista.y > eachVehiculoParam.y
    ) {
     this.isGameOn = false;
-  //   this.shipExplosionSound.play();
-  //   this.soundTrack.pause();
     canvas.style.display = "none";
     gameOverScreen.style.display = "flex";
    }
