@@ -8,17 +8,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    <audio id="audio1" src="./goat1.mp3"></audio>
     <title>Goat Rider</title>
 </head>
 <body>  
     
 
-    <div class="container" style="">
+    <div class="container">
         <!-- INTRO -->
         <!-- <audio id="songs" src="./sound/round.mp3" type="audio/mpeg"></audio> -->
         <div id="score"></div>
-        <div id="game-intro">
-          <img src="./img/portada.jpg" width="700px" height="450px alt="logo" />
+        <div id="game-intro" >
+          <img class="marginTop" src="./img/portada.jpg" width="700px" height="450px alt="logo" />
           <br />
           <button id="start-btn"><span>Start!</span></button>
           <p id="instructions">Movimiento: <span style="font-weight:700;">Utiliza las flechas</span> <img src="./img/keys.png" alt=""></p>
@@ -32,8 +33,8 @@
         
         <!-- GAME OVER SCREEN -->
         <div id="gameover-screen" class="hidden">
-          <img src="./img/gameOv.jpg" width="700" height="525" alt="logo" /><br /><br />
-           <button id="restart-btn">Play Again!</button>
+          <img class="marginTop" src="./img/gameOv.jpg" width="700" height="525" alt="logo" /><br /><br />
+           <button class="marginTop" id="restart-btn"><span>Play Again!</span></button>
           <!-- <p id="finalScore" class="finalScore"></p> -->
         </div>
       </div>

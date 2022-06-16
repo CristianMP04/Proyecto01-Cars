@@ -6,7 +6,7 @@ class Game {
     this.ciclista = new Ciclista();
     this.vehiculosArr = [];
     this.intervalId;
-    
+    this.audio1 = document.getElementById("audio1");
     this.isGameOn = true;
     this.frame = 0;
   }
@@ -33,6 +33,8 @@ class Game {
     this.ciclista.height + this.ciclista.y > eachVehiculoParam.y
    ) {
     this.isGameOn = false;
+    this.audio1.volume = 0.1;
+    this.audio1.play();
     canvas.style.display = "none";
     gameOverScreen.style.display = "flex";
    }
@@ -78,7 +80,7 @@ class Game {
       requestAnimationFrame(this.gameLoop);
     }
 
-    if (this.frame % 50 === 0) {
+    if (this.frame % 40 === 0) {
         this.spawningVehiculo();
     }
 
