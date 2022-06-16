@@ -20,7 +20,7 @@ class Game {
         const randomPositionX = Math.floor(Math.random() * (580 - 110) + 110); 
         this.vehiculosArr.push(new Vehiculo(randomPositionX));
         player.score++;
-      score.innerText = "Score: " + player.score;
+        score.innerText = "Score: " + player.score;
         
 
 
@@ -80,7 +80,7 @@ class Game {
       requestAnimationFrame(this.gameLoop);
     }
 
-    if (this.frame % 30 === 0) {
+    if (this.frame % 50 === 0) {
         this.spawningVehiculo();
     }
 

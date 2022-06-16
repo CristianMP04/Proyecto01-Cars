@@ -3,7 +3,7 @@ class Ciclista {
     this.x = canvas.width / 3;
     this.y = canvas.height - 100;
     this.speedX = 0;
-    this.speedY = 10;
+    this.speedY = 30;
     this.width = 60;
     this.height = 90;
     this.img = new Image();
