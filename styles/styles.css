@@ -92,7 +92,7 @@ body {
   #gameover-screen > button, #gameover-screen > button {
     position: absolute;
     top: 550px;
-    left: 850px;
+    left: 650px;
     width: 400px;
     height: 70px;
     font-weight: 700;
